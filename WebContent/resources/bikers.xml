@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<motorcyclists
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.example.com/substance"
+		xsi:schemaLocation ="http://www.example.com/ motoschema.xsd">
+	<motorcyclist name="Mike">
+		<helmet>
+			<id>1</id>
+			<weight>1.25</weight>
+			<price>50.5</price>
+			<glass>no</glass>
+			<color>Black</color>
+			<firm>"Arai"</firm>
+			<design>open-face</design>
+			<sizecl>XL</sizecl>
+		</helmet>
+		<jacket>
+			<id>2</id>
+			<weight>0.35</weight>
+			<price>70.5</price>
+			<model>"Classic/Town"</model>
+			<material>"Leather"</material>
+			<sizecl>L</sizecl>
+		</jacket>
+		<pants>
+			<id>3</id>
+			<weight>0.27</weight>
+			<price>30.3</price>
+			<kneeprotection>yes</kneeprotection>
+			<material>"Textile"</material>
+			<sizecl>XL</sizecl>
+		</pants>
+		<gloves>
+			<id>4</id>
+			<weight>0.15</weight>
+			<price>50.3</price>
+			<ventilation>Insert for ventilation</ventilation>
+			<sizecl>XL</sizecl>
+		</gloves>
+		<boots>
+			<id>5</id>
+			<weight>1.30</weight>
+			<price>400.3</price>
+			<fasteners>Aluminum with metal</fasteners>
+			<firm>"Speed"</firm>
+		</boots>
+	</motorcyclist>
+	<motorcyclist name="Chris">
+		<pants>
+			<id>6</id>
+			<weight>0.27</weight>
+			<price>30.3</price>
+			<kneeprotection>yes</kneeprotection>
+			<material>"Textile"</material>
+			<sizecl>L</sizecl>
+		</pants>
+		<boots>
+			<id>7</id>
+			<weight>1.05</weight>
+			<price>600.3</price>
+			<fasteners>Aluminum</fasteners>
+			<firm>"Speed"</firm>
+		</boots>
+	</motorcyclist>
+</motorcyclists>

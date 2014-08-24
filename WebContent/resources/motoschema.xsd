@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/substance/"
+	xmlns:tns="http://www.example.org/substance/clothes"
+	elementFormDefault="qualified">
+
+	<element name="cloth" type="tns:cloth" abstract="true" />
+	<element name="boots" type="tns:boots" substitutionGroup="tns:cloth" />
+	<element name="gloves" type="tns:gloves" substitutionGroup="tns:cloth" />
+	<element name="helmet" type="tns:helmet" substitutionGroup="tns:cloth" />
+	<element name="jacket" type="tns:jacket" substitutionGroup="tns:cloth" />
+	<element name="pants" type="tns:cloth" substitutionGroup="tns:cloth" />
+	<element name="motorcylist" type="tns:motorcyclist"/>
+	<element name="motorcyclists" type="tns:motorcyclist"/>
+
+	<complexType name="motorcyclist">
+		<sequence>
+			<element ref="tns:cloth" minOccurs="2" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name = "name" type="string" use="required"/>
+	</complexType>	
+	<complexType name="motorcyclists">
+		<sequence>
+			<element ref="tns:motorcyclist" minOccurs="2" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<complexType name="cloth">
+		<sequence>
+			<element name="id" type="tns:id" />
+			<element name="weight" type="float" />
+			<element name="price" type="float" />
+		</sequence>
+	</complexType>
+	<complexType name="boots">
+		<complexContent>
+			<extension base="tns:cloth">
+				<sequence>
+					<element name="fasteners" type="string" />
+					<element name="firm" type="string" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="gloves">
+		<complexContent>
+			<extension base="tns:cloth">
+				<sequence>
+					<element name="ventilation" type="string" />
+					<element name="sizecl" type="tns:sizecl" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="helmet">
+		<complexContent>
+			<extension base="tns:cloth">
+				<sequence>
+					<element name="glass" type="string" />
+					<element name="color" type="string" />
+					<element name="firm" type="string" />
+					<element name="design" type="string" />
+					<element name="sizecl" type="tns:sizecl" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="jacket">
+		<complexContent>
+			<extension base="tns:cloth">
+				<sequence>
+					<element name="model" type="string" />
+					<element name="material" type="string" />
+					<element name="sizecl" type="tns:sizecl" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<complexType name="pants">
+		<complexContent>
+			<extension base="tns:cloth">
+				<sequence>
+					<element name="kneeprotection" type="string" />
+					<element name="material" type="string" />
+					<element name="sizecl" type="tns:sizecl" />
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<simpleType name="sizecl">
+		<restriction base="string">
+			<enumeration value="S"></enumeration>
+			<enumeration value="M"></enumeration>
+			<enumeration value="L"></enumeration>
+			<enumeration value="XL"></enumeration>
+			<enumeration value="XXL"></enumeration>
+		</restriction>
+	</simpleType>
+	<simpleType name="id">
+		<restriction base="ID">
+			<pattern value="[A-Za-z0-9]+" />
+		</restriction>
+	</simpleType>
+</schema>
